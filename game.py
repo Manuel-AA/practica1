@@ -699,9 +699,9 @@ class Game:
             else:
                 self.state = self.state.generateSuccessor( agentIndex, action )
             if agentIndex == 0 and (str(agent).find("BustersKeyboardAgent") != -1 or str(agent).find("BasicAgentAA") != -1):
-                fichero = open("all_data_pacman.arff","a")
-                if os.stat("all_data_pacman.arff").st_size == 0:
-                    cadena="@relation all_data_pacman\n\n@attribute PosX_P numeric\n@attribute PosY_P numeric\n@attribute IsLegalNorth {0,1}\n@attribute IsLegalEast {0,1}\n@attribute IsLegalSouth {0,1}\n@attribute IsLegalWest {0,1}\n@attribute IsLegalStop {0,1}\n"
+                fichero = open("test_samemaps_keyboard.arff","a")
+                if os.stat("test_samemaps_keyboard.arff").st_size == 0:
+                    cadena="@relation test_samemaps_keyboard\n\n@attribute PosX_P numeric\n@attribute PosY_P numeric\n@attribute IsLegalNorth {0,1}\n@attribute IsLegalEast {0,1}\n@attribute IsLegalSouth {0,1}\n@attribute IsLegalWest {0,1}\n@attribute IsLegalStop {0,1}\n"
                     for i in range(4):
                         cadena = cadena+"@attribute PosX_G"+str(i)+" numeric\n@attribute PosY_G"+str(i)+" numeric\n"
                     for i in range(len(observation.data.ghostDistances)):
