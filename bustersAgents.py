@@ -18,11 +18,13 @@ from game import Directions
 from keyboardAgents import KeyboardAgent
 import inference
 import busters
+
 instancias = []
 lastMoves = []
 lastMoves.append(Directions.STOP)
 lastLegal = []
 lastLegal.append('Stop')
+
 class NullGraphics:
     "Placeholder for graphics"
     def initialize(self, state, isBlue = False):
@@ -464,11 +466,9 @@ class BasicAgentAA(BustersAgent):
         #Misma coordenada X
         if (restaX == 0):
             if (restaY > 0):
-                print(1)
                 if Directions.NORTH in legal: move = Directions.NORTH
                 else: 
                     move_random = random.randint(0, 1)
-                    print(move_random)
                     if (move_random == 0) and Directions.EAST in legal: move = Directions.EAST
                     if (move_random == 0) and Directions.EAST not in legal and Directions.WEST in legal: move = Directions.WEST
                     if (move_random == 1) and Directions.WEST in legal: move = Directions.WEST
@@ -506,7 +506,6 @@ class BasicAgentAA(BustersAgent):
         lastMoves.append(move)
         lastMoves.pop(0)
         lastLegal = legal
-        print(lastLegal)
         return move
 
     def printLineData(self, gameState):
