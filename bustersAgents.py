@@ -538,7 +538,7 @@ class BasicAgentAA(BustersAgent):
                 cadena = cadena + str(-1)+","
         #Distancia a la comidas
         cadena = cadena + str(gameState.getDistanceNearestFood())+","
-        #Direccion
+        #Direccion Pac-man
         cadena = cadena + gameState.data.agentStates[0].getDirection()+","
         #Scores
         cadena = cadena + str(gameState.getScore()) 
