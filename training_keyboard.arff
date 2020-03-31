@@ -21,10 +21,10 @@
 @attribute Dis_G3 numeric
 @attribute Dis_Dot numeric
 @attribute Dir_P {North,South,East,West,Stop}
-@attributte Score numeric
-@attributte Score1 numeric
-@attributte Score2 numeric
-@attributte Score3 numeric
+@attribute Score numeric
+@attribute Score1 numeric
+@attribute Score2 numeric
+@attribute Score3 numeric
 
 @data
 4,12,0,1,1,1,1,9,3,11,7,19,12,22,9,14,12,15,21,2,Stop,0,-1,-2,-3

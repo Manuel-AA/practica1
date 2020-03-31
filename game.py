@@ -699,14 +699,14 @@ class Game:
             else:
                 self.state = self.state.generateSuccessor( agentIndex, action )
             if agentIndex == 0 and (str(agent).find("BustersKeyboardAgent") != -1 or str(agent).find("BasicAgentAA") != -1):
-                fichero = open("test2_othermaps_keyboard.arff","a")
-                if os.stat("test2_othermaps_keyboard.arff").st_size == 0:
-                    cadena="@relation test2_othermaps_keyboard\n\n@attribute PosX_P numeric\n@attribute PosY_P numeric\n@attribute IsLegalNorth {0,1}\n@attribute IsLegalEast {0,1}\n@attribute IsLegalSouth {0,1}\n@attribute IsLegalWest {0,1}\n@attribute IsLegalStop {0,1}\n"
+                fichero = open("test_othermaps_tutorial1.arff","a")
+                if os.stat("test_othermaps_tutorial1.arff").st_size == 0:
+                    cadena="@relation test_othermaps_tutorial1\n\n@attribute PosX_P numeric\n@attribute PosY_P numeric\n@attribute IsLegalNorth {0,1}\n@attribute IsLegalEast {0,1}\n@attribute IsLegalSouth {0,1}\n@attribute IsLegalWest {0,1}\n@attribute IsLegalStop {0,1}\n"
                     for i in range(4):
                         cadena = cadena+"@attribute PosX_G"+str(i)+" numeric\n@attribute PosY_G"+str(i)+" numeric\n"
                     for i in range(len(observation.data.ghostDistances)):
                         cadena = cadena+"@attribute Dis_G"+str(i)+" numeric\n"
-                    cadena = cadena+"@attribute Dis_Dot numeric\n@attribute Dir_P {North,South,East,West,Stop}\n@attributte Score numeric\n@attributte Score1 numeric\n@attributte Score2 numeric\n@attributte Score3 numeric\n\n@data\n"
+                    cadena = cadena+"@attribute Dis_Dot numeric\n@attribute Dir_P {North,South,East,West,Stop}\n@attribute Score numeric\n@attribute Score1 numeric\n@attribute Score2 numeric\n@attribute Score3 numeric\n\n@data\n"
                     fichero.write(cadena)
                     fichero.write(agent.printLineData(observation))
                 else:
