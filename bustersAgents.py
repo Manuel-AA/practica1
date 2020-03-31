@@ -151,7 +151,11 @@ class BustersKeyboardAgent(BustersAgent, KeyboardAgent):
             for i in range(sobran):
                 cadena = cadena + str(-1)+","
         #Distancia a la comidas
-        cadena = cadena + str(gameState.getDistanceNearestFood())+","
+        distanciaComida = gameState.getDistanceNearestFood()
+	if distanciaComida == None:
+	    cadena = cadena + str(-1)+","
+	else:
+            cadena = cadena + str(distanciaComida)+","
         #Direccion
         cadena = cadena + gameState.data.agentStates[0].getDirection()+","
         #Scores
@@ -537,7 +541,11 @@ class BasicAgentAA(BustersAgent):
             for i in range(sobran):
                 cadena = cadena + str(-1)+","
         #Distancia a la comidas
-        cadena = cadena + str(gameState.getDistanceNearestFood())+","
+	distanciaComida = gameState.getDistanceNearestFood()
+	if distanciaComida == None:
+	    cadena = cadena + str(-1)+","
+	else:
+            cadena = cadena + str(distanciaComida)+","
         #Direccion Pac-man
         cadena = cadena + gameState.data.agentStates[0].getDirection()+","
         #Scores
