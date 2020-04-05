@@ -25,6 +25,7 @@ lastMoves.append(Directions.STOP)
 lastLegal = []
 lastLegal.append('Stop')
 
+
 class NullGraphics:
     "Placeholder for graphics"
     def initialize(self, state, isBlue = False):
@@ -318,8 +319,8 @@ class BasicAgentAA(BustersAgent):
         move = Directions.STOP
         legal = gameState.getLegalActions(0) ##Legal position from the pacman
         posicionPacman = gameState.getPacmanPosition()
-        posicionFantasmas = gameState.getGhostPositions()
-        distanciaFantasmas = gameState.data.ghostDistances
+	distanciaFantasmas = gameState.data.ghostDistances
+	posicionFantasmas = gameState.getGhostPositions()
         disMin = 1000
         for i in range(len(distanciaFantasmas)):
             if distanciaFantasmas[i] < disMin and distanciaFantasmas[i] != None: disMin = distanciaFantasmas[i]
