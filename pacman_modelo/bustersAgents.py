@@ -550,8 +550,10 @@ class BasicAgentAA(BustersAgent):
         lastMoves.pop(0)
         lastLegal = legal
 	x = [13,11,'1','1','1','1','1',13,9,5,1,7,-2]"""
-	print(x)
 	a = self.weka.predict("./prueba1.model", x, "./training_tutorial1(2).arff")
+	if a not in gameState.getLegalPacmanActions():
+	    move_random = random.randint(0, len(gameState.getLegalPacmanActions())-1)
+	    a = gameState.getLegalPacmanActions()[move_random]
         return a
 
     def printLineData(self, gameState):
